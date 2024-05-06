@@ -1,0 +1,64 @@
+{
+  "name": "cow",
+  "displayName": "Extension Starter",
+  "description": "Creates queries and other fun things with your default database.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionDependencies": [
+    "github.copilot-chat"
+  ],
+  "activationEvents": [],
+  "enabledApiProposals": [
+    "chatParticipant",
+    "chatVariableResolver",
+    "languageModels"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "cow",
+        "name": "cow",
+        "description": "Let's have some fun with Postgres",
+        "commands": [
+          {
+            "name": "help",
+            "description": "Need some help?"
+          },
+          {
+            "name": "haiku",
+            "description": "A random thing from a cow"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "cow.print",
+        "title": "Print what the cow say"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.86.0",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "mocha": "^10.4.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "cowsay": "^1.6.0",
+    "dotenv": "^16.4.5"
+  }
+}
